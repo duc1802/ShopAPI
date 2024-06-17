@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
+@Table(name = "`order`")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

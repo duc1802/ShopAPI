@@ -17,7 +17,7 @@ import java.net.URI;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/vi/products")
+@RequestMapping("/api/v1/products")
 public class ProductController {
     private final ProductRepository productRepository;
     private final OrderRepository orderRepository;

@@ -60,11 +60,10 @@ public class OrderController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping
-    public ResponseEntity<Page<Order>> getAll(Pageable pageable){
-        return ResponseEntity.ok(orderRepository.findAll(pageable));
-
-    }
+//    @GetMapping
+//    public ResponseEntity<Page<Order>> getAll(){
+//        return ResponseEntity.ok(orderRepository.findAll());
+//    }
     @GetMapping("/{id}")
     public ResponseEntity<Order> getById(@PathVariable Integer id){
         Optional<Order> optionalOrder = orderRepository.findById(id);
