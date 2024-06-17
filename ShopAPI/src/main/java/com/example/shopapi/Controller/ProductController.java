@@ -19,7 +19,7 @@ import java.util.Optional;
 public class ProductController {
      private final ProductRepository productRepository;
     @Autowired
-    public ProductController(ProductRepository repository, CustomerRepository customerRepository) {
+    public ProductController(ProductRepository repository) {
         this.productRepository = repository;
     }
 
