@@ -3,13 +3,13 @@ package com.example.shopapi.Entity;
 import jakarta.persistence.*;
 
 import java.util.List;
-import java.util.Set;
+
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
 
     private String name;
     private double price;
@@ -19,12 +19,11 @@ public class Product {
     private List<Order> orders;
 
     public Product() {}
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -34,6 +33,14 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getDescription() {
@@ -50,13 +57,5 @@ public class Product {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 }
