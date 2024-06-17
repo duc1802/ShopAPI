@@ -12,7 +12,7 @@ CREATE TABLE `Products`(
                            description text
 
 );
-CREATE TABLE `order` (
+CREATE TABLE `Orders` (
                          id int primary key auto_increment unique not null ,
                          cus_id int,
                          pro_id int,
