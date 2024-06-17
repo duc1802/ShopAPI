@@ -9,11 +9,11 @@ import com.example.shopapi.repository.ProductRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 import java.util.Optional;
 
 @RestController
@@ -60,10 +60,11 @@ public class OrderController {
         return ResponseEntity.noContent().build();
     }
 
-//    @GetMapping
-//    public ResponseEntity<Page<Order>> getAll(){
-//        return ResponseEntity.ok(orderRepository.findAll());
-//    }
+    @GetMapping
+    public ResponseEntity<Page<Order>> getAllOrders(Pageable pageable) {
+        Page<Order> ordersPage = orderRepository.findAll(pageable);
+        return ResponseEntity.ok(ordersPage);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Order> getById(@PathVariable Integer id){
         Optional<Order> optionalOrder = orderRepository.findById(id);
